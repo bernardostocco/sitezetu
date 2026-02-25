@@ -520,3 +520,169 @@ nav {
         gap: 30px;
     }
 }
+
+
+/* CSS LANDING PAGE FRANQUIA */
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS: LANDING PAGE DE FRANQUIA (O ZETÚ)
+   ========================================================================== */
+
+/* --- Hero Section LP --- */
+.hero-lp {
+    padding: 160px 0 100px;
+    background-color: var(--azul-escuro); /* Mantém a identidade O Zetú */
+    color: var(--branco);
+    text-align: center;
+}
+
+.hero-lp .tag {
+    background: var(--verde-zetu);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-lp h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 25px auto;
+    max-width: 900px;
+}
+
+.hero-lp p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* --- Listas de Diferenciais e Suporte --- */
+.bullet-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--cinza-texto);
+}
+
+.bullet-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--verde-zetu);
+    font-weight: bold;
+}
+
+/* --- Seção de Formulário --- */
+.form-section {
+    padding: 100px 0;
+    background-color: var(--cinza-fundo);
+}
+
+.franchise-form-container {
+    background: var(--branco);
+    padding: 60px;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-header {
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    color: var(--azul-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--azul-escuro);
+    font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 12px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--verde-zetu);
+    box-shadow: 0 0 0 4px rgba(var(--verde-rgb), 0.1);
+}
+
+/* Grid para campos lado a lado */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* --- Responsividade Específica da LP --- */
+@media (max-width: 850px) {
+    .hero-lp {
+        padding: 120px 0 80px;
+    }
+
+    .hero-lp h1 {
+        font-size: 2.4rem;
+        padding: 0 20px;
+    }
+
+    .hero-lp p {
+        font-size: 1.1rem;
+        padding: 0 30px;
+    }
+
+    .franchise-form-container {
+        padding: 40px 30px; /* Garante o respiro lateral que ajustamos anteriormente */
+        border-radius: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Empilha Cidade e WhatsApp no mobile */
+        gap: 0;
+    }
+
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-lp h1 {
+        font-size: 2rem;
+    }
+    
+    .franchise-form-container {
+        padding: 30px 20px;
+    }
+}
