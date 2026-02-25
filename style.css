@@ -1,0 +1,522 @@
+/* ZETÚ BOWLS & WRAPS - CSS ESTILO COMPLETO
+    Localização: Campinas, SP
+    Direção de Arte: Bernardo Stocco
+*/
+
+/* --- 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS --- */
+:root {
+    /* Paleta de Cores */
+    --azul-escuro: #0a2342;      /* Cor institucional principal */
+    --azul-compacto: #06162a;    /* Usado no header ao scrollar */
+    --branco: #ffffff;           /* Logo e textos claros */
+    --verde-zetu: #4caf50;       /* Elementos de saúde e botões secundários */
+    --dourado: #d4af37;          /* Botão de franquia/investimento */
+    --cinza-fundo: #f9f9f9;      /* Seções alternadas */
+    --preto-texto: #333333;      /* Leitura principal */
+    
+    /* Tipografia */
+    --font-primary: 'Poppins', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    
+    /* Animações e Transições */
+    --transicao-suave: all 0.5s ease-in-out;
+    --transicao-fade: opacity 1.5s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Garante o scroll suave entre seções */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--preto-texto);
+    overflow-x: hidden;
+    background-color: var(--branco);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- 2. HEADER E NAVEGAÇÃO --- */
+header {
+    background: var(--azul-escuro);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease, background 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    height: 45px; /* Tamanho ideal para nitidez */
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: white;
+}
+
+.btn-nav {
+    background: var(--dourado);
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 600 !important;
+    transition: background 0.3s ease !important;
+}
+
+.btn-nav:hover {
+    background: #ffe17f;
+    color: white;
+}
+
+/* --- 3. HERO SLIDER PRINCIPAL (BANNER) --- */
+.hero-slider {
+    position: relative;
+    height: 75vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    text-align: center;
+}
+
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: var(--transicao-fade); /* Troca automática controlada via JS */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* --- 4. SEÇÕES DE CONTEÚDO (GRID ZIGUEZAGUE) --- */
+.content-section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--cinza-fundo);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.grid-reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.img-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.text-box h2 {
+    color: var(--azul-escuro);
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* Listas de Conteúdo */
+.step-list {
+    list-style-position: outside;
+    margin-left: 20px;
+}
+
+.step-list li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.bullet-list {
+    list-style: none;
+}
+
+.bullet-list li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+
+.bullet-list li::before {
+    content: "•";
+    color: var(--verde-zetu);
+    font-size: 1.8rem;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+/* --- 5. MINI SLIDER EXPERIÊNCIA --- */
+.experience-slider-section {
+    padding: 100px 0;
+    background: var(--branco);
+}
+
+.mini-slider {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 40px auto;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+.mini-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.mini-slide.active {
+    opacity: 1;
+}
+
+.btn-primary-zetu {
+    display: inline-block;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 18px 45px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-primary-zetu:hover {
+    background: var(--azul-compacto);
+    transform: translateY(-3px);
+}
+
+/* --- 6. ACEITAMOS VR/VA --- */
+.payments-section {
+    padding: 80px 0;
+    border-top: 1px solid #eeeeee;
+    text-align: center;
+}
+
+.payments-section h3 {
+    font-family: var(--font-heading);
+    color: var(--azul-escuro);
+    margin-bottom: 35px;
+    font-size: 1.8rem;
+}
+
+.payments-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px; /* Espaço entre logos ampliado */
+    opacity: 1;
+    transition: var(--transicao-suave);
+}
+
+.payments-logos:hover {
+    opacity: 1;
+}
+
+.payments-logos img {
+    height: 100px; /* Altura ideal solicitada */
+    width: auto;
+}
+
+/* --- 7. NOSSA LOJA (BOTÕES) --- */
+.store-section {
+    padding: 100px 0;
+}
+
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.store-btn {
+    min-width: 180px;
+    text-align: center;
+    border: 2px solid var(--azul-escuro);
+    color: var(--azul-escuro);
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transicao-suave);
+}
+
+.store-btn:hover {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    transform: scale(1.05);
+}
+
+/* --- 8. SEÇÃO FRANQUEADO (COMPACTA) --- */
+.franchise-section {
+    padding: 100px 0;
+    background: var(--cinza-fundo);
+}
+
+.franchise-mini-card {
+    background: var(--branco);
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    max-width: 950px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.franchise-img-box {
+    flex: 1;
+}
+
+.franchise-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.franchise-content-box {
+    flex: 1.2;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tag {
+    background: var(--verde-zetu);
+    color: var(--branco);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+.btn-cta-gold {
+    display: inline-block;
+    background: var(--azul-compacto);
+    color: var(--branco);
+    padding: 18px 38px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    width: fit-content;
+    margin-top: 45px; /* Respiro solicitado */
+    transition: var(--transicao-suave);
+}
+
+.btn-cta-gold:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(68, 68, 255, 0.3);
+    color: white;
+}
+
+/* --- 9. RODAPÉ (FOOTER) --- */
+.main-footer {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+}
+
+.footer-links h4 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--branco);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.8rem;
+}
+
+/* --- 10. RESPONSIVIDADE TOTAL --- */
+@media (max-width: 992px) {
+    .grid, .grid-reverse {
+        gap: 40px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .grid, .grid-reverse {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 0;
+    }
+    
+    .grid-reverse .img-box {
+        order: 2; /* Texto fica em cima da imagem no mobile */
+    }
+
+    .franchise-mini-card {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none; /* Ideal adicionar um menu hamburguer aqui futuramente */
+    }
+
+    .mini-slider {
+        height: 350px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .text-box h2 {
+        font-size: 1.8rem;
+    }
+    .payments-logos {
+        gap: 30px;
+    }
+}
