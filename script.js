@@ -1,4 +1,4 @@
-// --- 1. SLIDER HERO (BANNER PRINCIPAL) ---
+// Slider principal
 const heroSlides = document.querySelectorAll('#hero-slider .slide');
 let currentHero = 0;
 setInterval(() => {
@@ -7,16 +7,16 @@ setInterval(() => {
     heroSlides[currentHero].classList.add('active');
 }, 3500);
 
-// --- 2. MINI SLIDER (EXPERIÊNCIA) ---
+// Mini slider
 const expSlides = document.querySelectorAll('#exp-slider .mini-slide');
 let currentExp = 0;
 setInterval(() => {
     expSlides[currentExp].classList.remove('active');
     currentExp = (currentExp + 1) % expSlides.length;
     expSlides[currentExp].classList.add('active');
-}, 3000); // Troca um pouco mais rápido que o hero
+}, 3000); 
 
-// --- 3. HEADER SCROLL ---
+// Header
 const header = document.getElementById('header');
 const logo = document.querySelector('.navbar-logo');
 window.addEventListener('scroll', () => {
